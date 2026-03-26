@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" dir="rtl" lang="he">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>נועם פיצה - צור קשר</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #b90027 0%, #d32f2f 100%);
+        }
+        .pizza-gradient-btn {
+            background: linear-gradient(135deg, #b90027 0%, #d32f2f 100%);
+
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f5f4e8",
+                        "primary-container": "#e31837",
+                        "inverse-on-surface": "#f2f1e5",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#93f1fe",
+                        "on-surface-variant": "#5d3f3e",
+                        "on-primary": "#ffffff",
+                        "surface": "#fbfaee",
+                        "on-primary-fixed-variant": "#92001d",
+                        "inverse-primary": "#ffb3b1",
+                        "surface-bright": "#fbfaee",
+                        "on-error": "#ffffff",
+                        "primary": "#b90027",
+                        "secondary-fixed": "#89faa5",
+                        "on-primary-fixed": "#410007",
+                        "secondary-container": "#89faa5",
+                        "surface-container-high": "#e9e9dd",
+                        "outline-variant": "#e6bdbb",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "primary-fixed": "#ffdad8",
+                        "surface-variant": "#e4e3d7",
+                        "inverse-surface": "#303129",
+                        "on-tertiary-container": "#f2fdff",
+                        "outline": "#916e6d",
+                        "secondary-fixed-dim": "#6cdd8c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001f23",
+                        "secondary": "#006d34",
+                        "on-surface": "#1b1c15",
+                        "surface-tint": "#bf0029",
+                        "on-primary-container": "#fffaf9",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1b1c15",
+                        "tertiary": "#00656f",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#77d4e1",
+                        "surface-container-highest": "#e4e3d7",
+                        "on-secondary-fixed-variant": "#005226",
+                        "tertiary-container": "#00808c",
+                        "on-secondary-fixed": "#00210b",
+                        "on-secondary-container": "#007438",
+                        "surface-container": "#efeee3",
+                        "background": "#fbfaee",
+                        "on-tertiary-fixed-variant": "#004f57",
+                        "surface-dim": "#dbdbcf"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+  <!-- TopNavBar -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-zinc-950/80 backdrop-blur-md border-b border-surface-container-high shadow-sm">
+    <div
+      class="flex flex-row-reverse justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-right">
+      <div class="text-2xl font-black text-primary">נועם פיצה</div>
+      <div class="hidden md:flex flex-row-reverse items-center gap-8">
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">צור קשר</a>
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">ביקורות</a>
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">עלינו</a>
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">תפריט</a>
+        <a class="text-primary font-extrabold border-b-2 border-primary" href="#">בית</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html#menu" >
+        <button
+          class="material-symbols-outlined text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-all">shopping_cart</button>
+          </a>
+        <button
+          class="primary-gradient text-white px-6 py-2 rounded-full font-bold transition-all hover:shadow-lg hover:scale-105 active:scale-95">התקשרו
+          עכשיו</button>
+      </div>
+  </nav>
+    <main class="pt-24 pb-16">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-primary leading-tight mb-6">בואו
+                        לבקר אותנו <br />בהוד השרון</h1>
+                    <p class="text-on-surface-variant text-lg leading-relaxed mb-8 max-w-xl">
+                        הפיצה האיכותית ביותר בעיר מחכה לכם עם חומרי גלם טריים, בצק בעבודת יד ואווירה ביתית. אנחנו כאן
+                        לכל שאלה, הזמנה או סתם כדי להגיד שלום.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a class="flex items-center gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15 hover:shadow-md transition-shadow group w-full sm:w-auto"
+                            href="tel:09-1234567">
+                            <div class="bg-primary-container/10 p-3 rounded-full text-primary">
+                                <span class="material-symbols-outlined" data-icon="call">call</span>
+                            </div>
+                            <div>
+                                <span class="block text-sm text-on-surface-variant">התקשרו להזמנות</span>
+                                <span class="text-xl font-bold tracking-tight">09-1234567</span>
+                            </div>
+                        </a>
+                        <a class="flex items-center gap-4 bg-secondary-container/10 p-6 rounded-xl border border-secondary-container/20 hover:bg-secondary-container/20 transition-all group w-full sm:w-auto"
+                            href="https://wa.me/972500000000">
+                            <div class="bg-secondary-container p-3 rounded-full text-on-secondary-container">
+                                <span class="material-symbols-outlined" data-icon="chat"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span>
+                            </div>
+                            <div>
+                                <span class="block text-sm text-on-secondary-container/80">שלחו לנו הודעה</span>
+                                <span class="text-xl font-bold tracking-tight">WhatsApp</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 relative">
+                    <div class="rounded-xl overflow-hidden aspect-[4/3] shadow-2xl">
+                        <img class="w-full h-full object-cover"
+                            data-alt="Modern artisanal pizza restaurant storefront with warm interior lighting, wooden furniture, and a large stone pizza oven visible in background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCARK-5udwP849KlyOUoQjT_ubHg7lqsdzHiRtY06OToQBN3lSUF7fWetTQW5Nph0FC8ZzMLFVFwHqnCsFxJbamOty3pWLk-5xaL0zQy6ny5exMx6U8lJVhNbV7qlUZ10Y4fO5VyrqnksrnSl4hDGPVB8lbDj6sAlfTvLkVPq0v4kuaSIL4_mzmGZ4NVddr_PzIkhjVDD3Odo-gSgbY6sYitYBIO3Jt7piS1zFYHWYz17NFiT-klWeiVQFBKU7HOAuOmgl70y5SMiCi" />
+                    </div>
+                    <!-- Accent decorative card -->
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-surface-container-lowest p-6 rounded-xl shadow-xl hidden md:block max-w-[240px] border border-outline-variant/10">
+                        <div class="flex items-center gap-3 mb-2 text-primary">
+                            <span class="material-symbols-outlined" data-icon="local_pizza">local_pizza</span>
+                            <span class="font-bold">אזורי משלוח</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant">הוד השרון, כפר סבא והסביבה הקרובה. משלוח מהיר וחם עד
+                            הבית.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Form and Hours Grid -->
+        <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Contact Form -->
+            <div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8 md:p-12">
+                <h2 class="font-headline text-3xl font-bold mb-8">נשמח לשמוע מכם</h2>
+                <form id="contact-form" action="https://formsubmit.co/noamfrenkel111@gmail.com" method="POST"
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block font-bold text-sm px-1">שם מלא</label>
+                        <input
+                            class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all"
+                            placeholder="ישראל ישראלי" type="text" name="name" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block font-bold text-sm px-1">טלפון</label>
+                        <input
+                            class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all"
+                            placeholder="050-0000000" type="tel" name="phone" />
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="block font-bold text-sm px-1">אימייל (אופציונלי)</label>
+                        <input
+                            class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all"
+                            placeholder="name@example.com" type="email" name="email" />
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="block font-bold text-sm px-1">ההודעה שלכם</label>
+                        <textarea
+                            class="w-full bg-surface-container-lowest border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                            placeholder="איך נוכל לעזור?" rows="4" name="message"></textarea>
+                    </div>
+                    <div class="md:col-span-2 pt-4">
+                        <button
+                            class="pizza-gradient-btn text-white px-12 py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform active:scale-95"
+                            type="submit">
+                            שלחו הודעה
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- Opening Hours -->
+            <div class="bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="font-headline text-2xl font-bold mb-8 flex items-center gap-3 text-primary">
+                        <span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+                        שעות פתיחה
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-on-surface-variant/10 pb-2">
+                            <span class="font-bold">ראשון - חמישי</span>
+                            <span class="font-medium">11:00 - 23:00</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-on-surface-variant/10 pb-2">
+                            <span class="font-bold">שישי</span>
+                            <span class="font-medium">11:00 - 15:30</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center border-b border-on-surface-variant/10 pb-2 text-primary">
+                            <span class="font-bold">מוצ"ש</span>
+                            <span class="font-medium">שעה לאחר השבת - 00:00</span>
+                        </div>
+                        <div class="mt-8 p-4 bg-surface-container-lowest/50 rounded-lg">
+                            <p class="text-sm italic leading-relaxed">
+                                * מומלץ להזמין מראש בסופי שבוע. <br />
+                                * שירות המשלוחים פועל בכל שעות הפעילות.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="bg-primary text-white p-6 rounded-xl text-center">
+                        <p class="font-bold mb-1">מחפשים אותנו ב-Waze?</p>
+                        <p class="text-sm opacity-90">הכניסו: "נועם פיצה הוד השרון"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="max-w-7xl mx-auto px-6 mb-16">
+    <div class="relative rounded-3xl overflow-hidden h-[450px] shadow-2xl border border-surface-container-high/20">
+        
+        <iframe 
+            src="https://www.google.com/maps/d/u/0/embed?mid=1D-ZoDSxpf9MNNha0Qqz6ANUsZeiPMko&ehbc=2E312F" 
+            class="absolute inset-0 w-full h-full border-0 brightness-[1.02] contrast-[1.02]" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        
+        <!-- <div class="absolute top-6 right-6 left-6 md:left-auto md:w-80">
+            <div class="backdrop-blur-md bg-white/90 dark:bg-zinc-900/90 p-6 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] border border-white/20">
+                <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-2.5 rounded-xl">
+                        <span class="material-symbols-outlined text-primary block text-2xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                    </div>
+                    
+                    <div class="text-right flex-1">
+                        <h4 class="font-black text-xl tracking-tight text-on-surface leading-none">דרך רמתיים 100</h4>
+                        <p class="text-sm text-on-surface-variant font-medium mt-2">הוד השרון, ישראל</p>
+                        
+                        <div class="mt-5">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=דרך+רמתיים+100+הוד+השרון" 
+                               target="_blank"
+                               class="block w-full bg-primary text-white text-center py-3 rounded-xl text-sm font-extrabold hover:bg-primary/90 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                                ניווט ליעד
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="absolute bottom-6 left-6 pointer-events-none">
+            <div class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm text-[10px] font-bold text-on-surface-variant/70 border border-white/40 uppercase tracking-widest">
+                Hod Hasharon • Israel
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <!-- WhatsApp Floating Button -->
+    <a aria-label="WhatsApp"
+        class="fixed bottom-8 left-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-90 transition-all"
+        href="https://wa.me/972547566033">
+        <svg class="w-10 h-10 fill-current" viewbox="0 0 24 24">
+            <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.522-2.961-2.638-.087-.117-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.548-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z">
+            </path>
+        </svg>
+    </a>
+    <!-- Footer -->
+<footer class="bg-surface-container-low w-full py-10 border-t border-outline-variant/10">
+  <div class="flex flex-row-reverse justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+    
+    <div class="flex flex-row-reverse items-center gap-6">
+      <span class="text-xl font-black text-primary whitespace-nowrap">נועם פיצה</span>
+      <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
+        רחוב הבנים 14, הוד השרון | 12:00 - 23:00
+      </p>
+    </div>
+
+    <div class="flex flex-row-reverse items-center gap-8">
+      
+      <div class="hidden md:flex flex-row-reverse items-center gap-6 text-sm font-bold">
+        <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="contact.html">צור קשר</a>
+        <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="policy.html">מדיניות פרטיות</a>
+      </div>
+
+      <div class="flex items-center gap-3 border-r border-outline-variant/30 pr-8">
+        <a href="https://www.instagram.com/napoli_nono_/" target="_blank" 
+           class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white transition-all duration-300 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/972547566033" target="_blank" 
+           class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm">
+          <span class="material-symbols-outlined text-2xl">chat</span>
+        </a>
+      </div>
+
+      <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
+        © 2026 נועם פיצה • כל הזכויות שמורות
+      </p>
+    </div>
+  </div>
+</footer>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+(function() {
+  emailjs.init("Sn0uCBgJcUfcEZncN");
+})();
+</script>
+</body>
+
+</html>

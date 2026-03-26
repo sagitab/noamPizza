@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#fbfaee",
+              "surface-dim": "#dbdbcf",
+              "tertiary-fixed-dim": "#77d4e1",
+              "on-surface-variant": "#5d3f3e",
+              "on-primary-fixed": "#410007",
+              "surface-variant": "#e4e3d7",
+              "outline": "#916e6d",
+              "on-tertiary-fixed": "#001f23",
+              "on-secondary-fixed": "#00210b",
+              "surface-container-low": "#f5f4e8",
+              "primary-container": "#e31837",
+              "on-background": "#1b1c15",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#ffb3b1",
+              "on-secondary-fixed-variant": "#005226",
+              "inverse-on-surface": "#f2f1e5",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1b1c15",
+              "surface-container-highest": "#e4e3d7",
+              "tertiary": "#00656f",
+              "secondary-fixed-dim": "#6cdd8c",
+              "secondary": "#006d34",
+              "outline-variant": "#e6bdbb",
+              "error": "#ba1a1a",
+              "inverse-surface": "#303129",
+              "on-tertiary-fixed-variant": "#004f57",
+              "surface-tint": "#bf0029",
+              "surface-container": "#efeee3",
+              "surface": "#fbfaee",
+              "secondary-fixed": "#89faa5",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#e9e9dd",
+              "on-error": "#ffffff",
+              "on-primary-container": "#fffaf9",
+              "on-primary-fixed-variant": "#92001d",
+              "primary": "#b90027",
+              "secondary-container": "#89faa5",
+              "on-secondary-container": "#007438",
+              "tertiary-fixed": "#93f1fe",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#f2fdff",
+              "background": "#fbfaee",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#ffb3b1",
+              "tertiary-container": "#00808c",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#ffdad8"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fbfaee;
+            color: #1b1c15;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar Shell -->
+<nav class="fixed top-0 z-50 w-full bg-[#fbfaee]/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(27,28,21,0.04)] flex flex-row-reverse justify-between items-center px-6 py-4">
+<div class="text-2xl font-black text-[#b90027] tracking-tight">
+            נועם פיצה
+        </div>
+<a href="index.html">
+<div class="flex items-center gap-4">
+<button class="text-[#1b1c15] active:scale-95 duration-200 transition-opacity hover:opacity-80">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</a>
+</nav>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-16 text-center">
+<h1 class="text-5xl md:text-6xl font-extrabold text-primary tracking-tight mb-6">מדיניות פרטיות</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
+                ב"נועם פיצה", הפרטיות שלכם היא המרכיב החשוב ביותר במתכון שלנו. אנו מחויבים לשמור על המידע האישי שלכם בשקיפות מלאה ובביטחון מקסימלי.
+            </p>
+</header>
+<!-- Content Sections -->
+<div class="space-y-12">
+<!-- Bento Style Intro Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-4 mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="info">info</span>
+<h2 class="text-2xl font-bold tracking-tight">מבוא</h2>
+</div>
+<p class="text-on-surface leading-relaxed text-md">
+                    מדיניות פרטיות זו מתארת כיצד "נועם פיצה" אוספת, משתמשת ומגנה על המידע שאתם מספקים לנו בעת השימוש באתר שלנו, באפליקציה או בעת ביצוע הזמנה. אנחנו מעריכים את האמון שלכם ומתחייבים להשתמש במידע שלכם רק למטרות שיפור חוויית הלקוח ומתן השירות הטוב ביותר.
+                </p>
+</section>
+<!-- Info Collection Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-4 text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="person_search">person_search</span>
+<h2 class="text-2xl font-bold tracking-tight">איסוף מידע</h2>
+</div>
+<p class="text-on-surface leading-relaxed">
+                            אנו אוספים מידע אישי שתמסרו לנו באופן וולונטרי, כגון שם, כתובת למשלוח, מספר טלפון וכתובת דואר אלקטרוני, בעת ביצוע הזמנה או הרשמה למועדון הלקוחות שלנו.
+                        </p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl h-64 md:h-auto min-h-[200px]">
+<img alt="Fresh Italian Pizza" class="absolute inset-0 w-full h-full object-cover" data-alt="top-down close-up view of a gourmet artisanal pizza with fresh basil and mozzarella on a warm wooden background with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNQMThgfFO5XZii9--TYGemNab2GL9zMl3Nk0JE67I2bomJa4L4HEkquka8qlqU0XjWaq82OqhmphcdxWodOO2hkeP3pUi4m1KvBY-hbEQBOFgcExcZy1rLOIvi_HsX4QuU3G8Xo5ncswGkSg-Bn7ro1geqKsqZbdg3Z8G8EsPqG-GxjGXARWmEZg4msIh_9sog1K6weIf7sIAwaufbEZxUcNHpKAAmriie0e246RGexinTVGb2K-iiGuH-p-JuYJpbp53VKMFJiSm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</section>
+<!-- Usage Section with Tonal Layering -->
+<section class="bg-surface-container rounded-xl p-8">
+<div class="flex items-center gap-4 mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="local_pizza">local_pizza</span>
+<h2 class="text-2xl font-bold tracking-tight">שימוש במידע</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-lg">
+<h3 class="font-bold mb-2">ניהול הזמנות</h3>
+<p class="text-sm opacity-80">הכנה ושילוח של הפיצה החמה שלכם עד הבית.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg">
+<h3 class="font-bold mb-2">שיפור השירות</h3>
+<p class="text-sm opacity-80">ניתוח העדפות כדי להציע לכם את התפריט המדויק ביותר.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg">
+<h3 class="font-bold mb-2">עדכונים ומבצעים</h3>
+<p class="text-sm opacity-80">שליחת הצעות טעימות שפשוט אי אפשר לסרב להן.</p>
+</div>
+</div>
+</section>
+<!-- Security & Cookies Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="shield_lock">shield_lock</span>
+<h2 class="text-xl font-bold">אבטחת מידע</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed text-sm">
+                        אנו מיישמים אמצעי אבטחה טכנולוגיים וארגוניים מתקדמים כדי להגן על המידע האישי שלכם מפני גישה לא מורשית, שינוי, חשיפה או הרס. כל פרטי התשלום מעובדים בתקני האבטחה המחמירים ביותר.
+                    </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="cookie">cookie</span>
+<h2 class="text-xl font-bold">עוגיות (Cookies)</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed text-sm">
+                        האתר שלנו משתמש בעוגיות כדי לשפר את הגלישה שלכם. העוגיות עוזרות לנו לזכור את ההעדפות שלכם ולספק לכם חוויה מותאמת אישית. ניתן לנהל את הגדרות העוגיות בדפדפן שלכם בכל עת.
+                    </p>
+</div>
+</section>
+<!-- Rights Section with Editorial Style -->
+<section class="relative bg-primary text-white p-10 rounded-2xl overflow-hidden shadow-2xl">
+<div class="relative z-10">
+<h2 class="text-3xl font-bold mb-6 tracking-tight">זכויות המשתמש</h2>
+<p class="mb-8 opacity-90 text-lg">
+                        השליטה היא בידיים שלכם. אתם זכאים לעיין במידע השמור אצלנו, לבקש לתקנו, או לבקש את מחיקתו מהמאגרים שלנו בכפוף להוראות הדין.
+                    </p>
+<a href="contact.html">
+<button class="bg-surface text-primary font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform active:scale-95">
+                        צרו איתנו קשר למידע נוסף
+                    </button></a>
+</div>
+<!-- Abstract decorative element -->
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-white/5 rounded-full blur-2xl"></div>
+</section>
+</div>
+<!-- Last Updated Footer -->
+<footer class="mt-20 border-t border-outline-variant/15 pt-8 text-center text-sm text-on-surface-variant">
+<p>עדכון אחרון: ינואר 2024</p>
+<p class="mt-2">© כל הזכויות שמורות לנועם פיצה - הוד השרון</p>
+</footer>
+</main>
+<!-- Navigation suppressed per rules for "transactional/task-focused" detail pages like Privacy Policy to prioritize content -->
+<!-- However, providing a minimal floating navigation back to Home if needed for UX flow -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 md:hidden">
+<a class="bg-primary text-white flex items-center gap-2 px-6 py-3 rounded-full shadow-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>חזרה לבית</span>
+</a>
+</div>
+</body></html>

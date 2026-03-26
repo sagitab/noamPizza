@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f5f4e8",
+            "primary-container": "#e31837",
+            "inverse-on-surface": "#f2f1e5",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#93f1fe",
+            "on-surface-variant": "#5d3f3e",
+            "on-primary": "#ffffff",
+            "surface": "#fbfaee",
+            "on-primary-fixed-variant": "#92001d",
+            "inverse-primary": "#ffb3b1",
+            "surface-bright": "#fbfaee",
+            "on-error": "#ffffff",
+            "primary": "#b90027",
+            "secondary-fixed": "#89faa5",
+            "on-primary-fixed": "#410007",
+            "secondary-container": "#89faa5",
+            "surface-container-high": "#e9e9dd",
+            "outline-variant": "#e6bdbb",
+            "primary-fixed-dim": "#ffb3b1",
+            "primary-fixed": "#ffdad8",
+            "surface-variant": "#e4e3d7",
+            "inverse-surface": "#303129",
+            "on-tertiary-container": "#f2fdff",
+            "outline": "#916e6d",
+            "secondary-fixed-dim": "#6cdd8c",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#001f23",
+            "secondary": "#006d34",
+            "on-surface": "#1b1c15",
+            "surface-tint": "#bf0029",
+            "on-primary-container": "#fffaf9",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "on-background": "#1b1c15",
+            "tertiary": "#00656f",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#77d4e1",
+            "surface-container-highest": "#e4e3d7",
+            "on-secondary-fixed-variant": "#005226",
+            "tertiary-container": "#00808c",
+            "on-secondary-fixed": "#00210b",
+            "on-secondary-container": "#007438",
+            "surface-container": "#efeee3",
+            "background": "#fbfaee",
+            "on-tertiary-fixed-variant": "#004f57",
+            "surface-dim": "#dbdbcf"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Be Vietnam Pro"],
+            "label": ["Be Vietnam Pro"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-nav {
+      background-color: rgba(251, 250, 238, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .primary-gradient {
+      background: linear-gradient(135deg, #b90027 0%, #e31837 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+  <!-- TopNavBar -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-zinc-950/80 backdrop-blur-md border-b border-surface-container-high shadow-sm">
+    <div
+      class="flex flex-row-reverse justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-right">
+      <div class="text-2xl font-black text-primary">נועם פיצה</div>
+      <div class="hidden md:flex flex-row-reverse items-center gap-8">
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">צור קשר</a>
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">ביקורות</a>
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">עלינו</a>
+        <a class="text-on-surface hover:text-primary transition-colors" href="#">תפריט</a>
+        <a class="text-primary font-extrabold border-b-2 border-primary" href="#">בית</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html#menu" >
+        <button
+          class="material-symbols-outlined text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-all">shopping_cart</button>
+          </a>
+        <button
+          class="primary-gradient text-white px-6 py-2 rounded-full font-bold transition-all hover:shadow-lg hover:scale-105 active:scale-95">התקשרו
+          עכשיו</button>
+      </div>
+    </div>
+  </nav>
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[870px] flex items-center overflow-hidden px-6 lg:px-12 py-12">
+      <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 space-y-8 text-right">
+          <span
+            class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold tracking-wide">הפיצה
+            הטובה בהוד השרון</span>
+          <h1 class="text-5xl lg:text-7xl font-black font-headline text-on-surface leading-[1.1] tracking-tight">
+            נועם פיצה - האיכות של <span class="text-primary">הוד השרון</span>
+          </h1>
+          <p class="text-lg lg:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+            בצק בעבודת יד, רוטב עגבניות איטלקי אמיתי וגבינת מוצרלה משובחת. אנחנו לא רק מכינים פיצה, אנחנו יוצרים חוויה
+            קולינרית בכל משלוח.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-end lg:justify-start">
+            <a class="primary-gradient text-on-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95"
+              href="#menu">צפה בתפריט</a>
+            <a class="bg-surface-container-highest text-on-surface px-10 py-4 rounded-full font-bold text-lg transition-all hover:bg-surface-container-high active:scale-95"
+              href="tel:972547566033">התקשרו עכשיו</a>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10 transform scale-110"></div>
+          <img
+            class="w-full h-auto object-cover rounded-3xl rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl"
+            data-alt="top-down artistic close-up of a fresh artisanal pizza with melted mozzarella, basil leaves, and vibrant red tomato sauce on a rustic warm wood table"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuABNS5vvsaNdb_g2TXM9hRdAknPw5vkw49OR8rjueCBpNGT77OFXkDjga-9FD9GkpesdCnONngnrLC_QiqAYGwivtR96I0RZ3ddOqJR9IwapJzeYSDyr8V6rooYYjhoFvqpVHcL6ay7Duh2Mhre_OIWRSi14r5hVxuPw10GbFvz2GSqJi7TdSeX6nkVT8piFvAhOSgJ_RgyMzfFNrOr2PfKyECiRe5c79V9XZTM20chivbhdRVeIxxB1_ScPbw7mWimXp309cSBsfUG" />
+        </div>
+      </div>
+    </section>
+    <!-- Intro Section -->
+    <section class="bg-surface-container-low py-24 px-6 lg:px-12">
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+        <div class="inline-flex items-center gap-2 text-primary font-bold">
+          <span class="w-12 h-[2px] bg-primary"></span>
+          <span>הסיפור שלנו</span>
+          <span class="w-12 h-[2px] bg-primary"></span>
+        </div>
+        <h2 class="text-3xl lg:text-5xl font-black font-headline leading-tight">טריות היא לא המלצה, היא דרך חיים</h2>
+        <p class="text-xl text-on-surface-variant leading-loose">
+          בנועם פיצה, אנחנו מאמינים שאיכות מתחילה בחומרי הגלם. הקמח שלנו מיובא מאיטליה, הירקות מגיעים מדי בוקר מחקלאי
+          האזור, והבצק תופח לפחות 48 שעות כדי להעניק לכם את המרקם המושלם – פריך מבחוץ ואוורירי מבפנים.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
+          <div class="space-y-2">
+            <span class="material-symbols-outlined text-4xl text-primary"
+              style="font-variation-settings: 'FILL' 1;">restaurant</span>
+            <p class="font-bold">בצק טרי</p>
+          </div>
+          <div class="space-y-2">
+            <span class="material-symbols-outlined text-4xl text-primary"
+              style="font-variation-settings: 'FILL' 1;">eco</span>
+            <p class="font-bold">ירקות שוק</p>
+          </div>
+          <div class="space-y-2">
+            <span class="material-symbols-outlined text-4xl text-primary"
+              style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+            <p class="font-bold">מוצרלה 100%</p>
+          </div>
+          <div class="space-y-2">
+            <span class="material-symbols-outlined text-4xl text-primary"
+              style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+            <p class="font-bold">משלוח מהיר</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Popular Pizzas (Bento Style) -->
+    <!-- Full Menu -->
+    <section id="menu" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="text-right mb-16">
+        <h2 class="text-4xl lg:text-5xl font-black font-headline mb-4 text-primary">התפריט שלנו</h2>
+        <p class="text-xl text-on-surface-variant">פיצות, פוקצ'ות וקינוחים היישר מהתנור שלנו</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Item 1: Neapolitan -->
+        <div
+          class="menu-item group rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="images/napolitanit.jpeg"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="נפוליטנית">
+          </div>
+          <div class="p-8 text-right flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4 flex-row-reverse">
+              <span class="text-2xl font-black text-primary price">₪55.00</span>
+              <h3 class="text-2xl font-black font-headline">נפוליטנית</h3>
+            </div>
+            <p class="text-on-surface-variant flex-grow mb-6">נפוליטנית מסורתית + תוספות.</p>
+            <!-- <button
+              class="add-to-cart-btn w-full py-3 bg-surface-container-high hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-on-surface">הוסף
+              לעגלה</button> -->
+          </div>
+        </div>
+
+        <!-- Item 2: Pesto Pizza -->
+        <div
+          class="menu-item group rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="images/napolitanit-pesto.jpeg"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="נפוליטנית פסטו">
+          </div>
+          <div class="p-8 text-right flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4 flex-row-reverse">
+              <span class="text-2xl font-black text-primary price">₪60.00</span>
+              <h3 class="text-2xl font-black font-headline">נפוליטנית פסטו</h3>
+            </div>
+            <p class="text-on-surface-variant flex-grow mb-6">נפוליטנית מסורתית עם פסטו ובזיליקום.</p>
+            <!-- <button
+              class="add-to-cart-btn w-full py-3 bg-surface-container-high hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-on-surface">הוסף
+              לעגלה</button> -->
+          </div>
+        </div>
+
+        <!-- Item 3: Focaccia -->
+        <div
+          class="menu-item group rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="images/fukacha.jpeg"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="פוקצה">
+          </div>
+          <div class="p-8 text-right flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4 flex-row-reverse">
+              <span class="text-2xl font-black text-primary price">₪40.00</span>
+              <h3 class="text-2xl font-black font-headline">פוקצה</h3>
+            </div>
+            <p class="text-on-surface-variant flex-grow mb-6">פוקצה רגילה + שמן זית, שום, רוזמרין, טימין + רטבים.</p>
+            <!-- <button
+              class="add-to-cart-btn w-full py-3 bg-surface-container-high hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-on-surface">הוסף
+              לעגלה</button> -->
+          </div>
+        </div>
+
+        <!-- Item 4: Focaccia Veggies -->
+        <div
+          class="menu-item group rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="images/fukacha-haftaot.jpeg"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="פוקצת הפתעות">
+          </div>
+          <div class="p-8 text-right flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4 flex-row-reverse">
+              <span class="text-2xl font-black text-primary price">₪45.00</span>
+              <h3 class="text-2xl font-black font-headline">פוקצת הפתעות</h3>
+            </div>
+            <p class="text-on-surface-variant flex-grow mb-6">פוקצה + שמן זית, בצל, עגבנייה, גמבה, רוזמרין, שום וטימין.
+            </p>
+            <!-- <button
+              class="add-to-cart-btn w-full py-3 bg-surface-container-high hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-on-surface">הוסף
+              לעגלה</button> -->
+          </div>
+        </div>
+
+        <!-- Item 5: Focaccia Meat -->
+        <div
+          class="menu-item group rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="images/fukacha-meat.png"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="פוקצה בשר">
+          </div>
+          <div class="p-8 text-right flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4 flex-row-reverse">
+              <span class="text-2xl font-black text-primary price">₪60.00</span>
+              <h3 class="text-2xl font-black font-headline">פוקצה בשר</h3>
+            </div>
+            <p class="text-on-surface-variant flex-grow mb-6">פוקצה + שמן זית, רוזמרין ותבלינים.</p>
+            <!-- <button
+              class="add-to-cart-btn w-full py-3 bg-surface-container-high hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-on-surface">הוסף
+              לעגלה</button> -->
+          </div>
+        </div>
+
+        <!-- Item 6: Calzone Nutella -->
+        <div
+          class="menu-item group rounded-3xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="images/kazonechocolate.jpg"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="קלצונה נוטלה">
+          </div>
+          <div class="p-8 text-right flex flex-col flex-grow">
+            <div class="flex justify-between items-start mb-4 flex-row-reverse">
+              <span class="text-2xl font-black text-primary price">₪35.00</span>
+              <h3 class="text-2xl font-black font-headline">קלצונה נוטלה</h3>
+            </div>
+            <p class="text-on-surface-variant flex-grow mb-6">קלצונה מבצק נפוליטני עם נוטלה.</p>
+            <!-- <button
+              class="add-to-cart-btn w-full py-3 bg-surface-container-high hover:bg-primary hover:text-white transition-colors rounded-xl font-bold text-on-surface">הוסף
+              לעגלה</button> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 px-6 lg:px-12 bg-surface-container-high overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-black font-headline mb-16 text-center">מה הלקוחות שלנו אומרים</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm space-y-4">
+            <div class="flex text-primary">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-on-surface italic leading-relaxed">"הפיצה הכי טובה בהוד השרון בפער. הבצק פשוט מושלם והשירות
+              תמיד עם חיוך. ממליץ בחום על הבוראטה!"</p>
+            <div class="pt-4 border-t border-surface-container-high flex items-center gap-4 flex-row-reverse">
+              <div class="text-right">
+                <p class="font-bold">איתי לוי</p>
+                <p class="text-sm text-on-surface-variant">לקוח קבוע</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm space-y-4">
+            <div class="flex text-primary">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-on-surface italic leading-relaxed">"הזמנו למסיבת יום הולדת, הגיע חם, מהר ובדיוק כמו שביקשנו.
+              הילדים עפו על המרגריטה והמבוגרים על המיוחדות."</p>
+            <div class="pt-4 border-t border-surface-container-high flex items-center gap-4 flex-row-reverse">
+              <div class="text-right">
+                <p class="font-bold">מיכל כהן</p>
+                <p class="text-sm text-on-surface-variant">הוד השרון</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm space-y-4">
+            <div class="flex text-primary">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-on-surface italic leading-relaxed">"איכות של מסעדת שף בפיצרייה שכונתית. הירקות מרגישים טריים
+              והרוטב עשיר מאוד. הפינאלה המושלמת ליום עבודה."</p>
+            <div class="pt-4 border-t border-surface-container-high flex items-center gap-4 flex-row-reverse">
+              <div class="text-right">
+                <p class="font-bold">דניאל גרין</p>
+                <p class="text-sm text-on-surface-variant">מבקר אוכל</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Instagram Feed -->
+    <section id="gallery" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-black font-headline mb-4">עקבו אחרינו באינסטגרם</h2>
+        <p class="text-primary font-bold">@napoli_nono_</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="aspect-square rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            data-alt="vibrant instagram-style photo of a hand picking up a cheesy pizza slice with dramatic cheese pull"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrKHvLANUSZUGEXy5x4s2l3N9bfyR9zmvmVHp5HMFn40TCbGrhx4DoU_lAYqNSC8qmKywqHaV1RE1JbEHrAEaEwqbxSWD2p9c7XHKUkwkwospjwJuX1wfflEZOWmDd24As8fY0H0GSVYsLrDg93PYydff_dmemG59dbPl-lnQ_up3XY0bf8g-AOzTojgIaFZIT3-2v0FnrkNnudwTuAaaqrFM_op6EAC7Hi_m-Q4jvlWCBVs2d5DFj3Cu1Z-5f4H1GzeIW8GMObio" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            data-alt="lifestyle photo of friends laughing around a pizza box in a modern urban apartment setting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQxTCowj1rRgxptj3L_0vujZQnpzehUb-hLxfgbKNm6yDi2OcYnDp9RHXVeSDF5R8MEyryxAJL_Tx7ZTAx7ZrAyJx4n441tedcw3hhK9SwITyjINxJB9pW0kyfCYBsnU-EWwIKEIZNKSn7fuM0IoF_XyDBsNodoFFVKr9NSAZQ7d6KJtzY_jmeacpL6eTRBLT7wezGLxdMJtoh_h5Pn_f1U9km3E2hC2z816izC-B952kORTaW1VjsD-UaN2nBJE0PggPXeQ299NNG" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            data-alt="aesthetic close-up of fresh cherry tomatoes, basil, and flour on a dark kitchen surface"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9b8fhDST13X5dxj8qOBhcIUStVWiYSZYhSzNcAsiWvXv-nMoq4Fijzvwm0WaqSf4fBvollt4HvlSrRdFYmbeGYsq8C5dkLgOaYuAcCKnels_zsB6Q1ZyIAduhr-fcZeNiJXOKvs7GRyYubyTTtEvrRXBrh3JL5uqxL5tlo_k_dt4JfyMo3uOXAts4WaEqy_VWBnDo7S3IBNubxReQ8k6E1IyskImAVsGKqqNni2Qi_gOCLtqKwqDr_DzJnRR50oVr9jjgYxFWWik3" />
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden group">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            data-alt="beautifully lit shot of a pizza box being opened, steam rising from a hot vegetable pizza"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TlRKenZedbVHG5ujNq2eu_MeeS9KJCCFd23mWpKuqUkp_2sOLUbXukDsoHHSflxPZ5xwEG1qSMVjPhL7HKFh3ijKi3x09Ndd_qp30bSW2CaRGo6NxyJD4bpa6VPTI8faiDAbX1GgLP-Yc3ohtLOND4B_s7_SpvJdoSrSnCYkO3sK5D-e-LZ2g-kaaR4ZJjkn3kgzlnZngGdt2KzRHt_8WJKgVnHAJISIFRULu59XChWIandKW9Bnu3oyzGiIL03GiB3aV786j61s" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+<footer class="bg-surface-container-low w-full py-10 border-t border-outline-variant/10">
+  <div class="flex flex-row-reverse justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+    
+    <div class="flex flex-row-reverse items-center gap-6">
+      <span class="text-xl font-black text-primary whitespace-nowrap">נועם פיצה</span>
+      <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
+        רחוב הבנים 14, הוד השרון | 12:00 - 23:00
+      </p>
+    </div>
+
+    <div class="flex flex-row-reverse items-center gap-8">
+      
+      <div class="hidden md:flex flex-row-reverse items-center gap-6 text-sm font-bold">
+        <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="contact.html">צור קשר</a>
+        <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="policy.html">מדיניות פרטיות</a>
+      </div>
+
+      <div class="flex items-center gap-3 border-r border-outline-variant/30 pr-8">
+        <a href="https://www.instagram.com/napoli_nono_/" target="_blank" 
+           class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white transition-all duration-300 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/972547566033" target="_blank" 
+           class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm">
+          <span class="material-symbols-outlined text-2xl">chat</span>
+        </a>
+      </div>
+
+      <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
+        © 2026 נועם פיצה • כל הזכויות שמורות
+      </p>
+    </div>
+  </div>
+</footer>
+  <!-- Mobile FAB for Ordering -->
+  <a class="md:hidden fixed bottom-6 left-6 z-40 primary-gradient text-on-primary p-4 rounded-full shadow-2xl flex items-center justify-center"
+    href="tel:*">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+  </a>
+  <script src="main.js"></script>
+</body>
+
+</html>
