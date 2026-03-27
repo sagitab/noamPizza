@@ -98,7 +98,7 @@
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
   <!-- TopNavBar -->
   <nav
-    class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-zinc-950/80 backdrop-blur-md border-b border-surface-container-high shadow-sm">
+    class="hidden md:flex fixed top-0 w-full z-50 bg-surface/90 dark:bg-zinc-950/80 backdrop-blur-md border-b border-surface-container-high shadow-sm">
     <div
       class="flex flex-row-reverse justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-right">
       <div class="text-2xl font-black text-primary">נועם פיצה</div>
@@ -114,12 +114,42 @@
         <button
           class="material-symbols-outlined text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-all">shopping_cart</button>
           </a>
+        <a href="tel:972547566033">  
         <button
           class="primary-gradient text-white px-6 py-2 rounded-full font-bold transition-all hover:shadow-lg hover:scale-105 active:scale-95">התקשרו
           עכשיו</button>
+          </a>
       </div>
     </div>
   </nav>
+     <!-- mobile nav bar -->
+  <header class="md:hidden fixed top-0 w-full z-50 bg-[#fbfaee]/80 dark:bg-[#1b1c15]/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+  <div class="flex justify-between items-center px-6 py-4 w-full">
+  <button id="menu-toggle"
+  class="text-[#1b1c15] active:scale-95 duration-200 transition-opacity hover:opacity-80">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+  <a href="tel:972547566033">
+  <button class="flex items-center gap-1 bg-primary/10 text-primary px-3 py-1.5 rounded-full active:scale-95 transition-transform">
+  <span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+  <span class="text-xs font-bold">התקשר עכשיו</span>
+  </button></a>
+  <div class="text-xl font-bold text-[#b90027] font-plus-jakarta tracking-tight">
+                  נועם פיצה
+              </div>
+  </div>
+  </header>
+<div id="mobile-menu"
+     class="hidden md:hidden fixed top-[72px] right-0 w-full bg-[#fbfaee] dark:bg-[#1b1c15] shadow-lg z-40">
+
+  <div class="flex flex-col items-start gap-6 p-6 text-right font-bold">
+    <a href="#" class="text-on-surface hover:text-primary">בית</a>
+    <a href="#" class="text-on-surface hover:text-primary">תפריט</a>
+    <a href="#" class="text-on-surface hover:text-primary">עלינו</a>
+    <a href="#" class="text-on-surface hover:text-primary">ביקורות</a>
+    <a href="#" class="text-on-surface hover:text-primary">צור קשר</a>
+  </div>
+</div>
   <main class="pt-20">
     <!-- Hero Section -->
     <section class="relative min-h-[870px] flex items-center overflow-hidden px-6 lg:px-12 py-12">
@@ -420,7 +450,7 @@
 
     <div class="flex flex-row-reverse items-center gap-8">
       
-      <div class="hidden md:flex flex-row-reverse items-center gap-6 text-sm font-bold">
+      <div class="flex-row-reverse items-center gap-6 text-sm font-bold">
         <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="contact.html">צור קשר</a>
         <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="policy.html">מדיניות פרטיות</a>
       </div>
@@ -442,12 +472,14 @@
       <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
         © 2026 נועם פיצה • כל הזכויות שמורות
       </p>
+      
+
     </div>
   </div>
 </footer>
   <!-- Mobile FAB for Ordering -->
   <a class="md:hidden fixed bottom-6 left-6 z-40 primary-gradient text-on-primary p-4 rounded-full shadow-2xl flex items-center justify-center"
-    href="tel:*">
+    href="tel:972547566033">
     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
   </a>
   <script src="main.js"></script>

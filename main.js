@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    initMobileMenu();
     initCallButtons();
     initWhatsApp();
     initCTAButtons();
-    initMobileMenu();
     initContactForm();
     initInstagramLinks();
     initScrollToTop();
@@ -13,9 +13,93 @@ document.addEventListener('DOMContentLoaded', () => {
 const PHONE = '972547566033';
 const ISRAEL_LOCAL = '054-7566033'; // Best guess formatting for visual display if needed
 const EMAIL = 'noamfrenkel111@gmail.com';
-document.addEventListener("DOMContentLoaded", initNavigation);
+// Move isHome to the top level so all functions can see it
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const isHome = currentPage === "index.html" || currentPage === "";
 
-document.getElementById("contact-form").addEventListener("submit", function(e) {
+function initMobileMenu() {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+
+    if (!toggle || !menu) {
+        console.log("menu-toggle or mobile-menu not found");
+        return;
+    }
+
+    console.log("Mobile menu initialized");
+
+    toggle.addEventListener("click", () => {
+        console.log("CLICK WORKS");
+        menu.classList.toggle("hidden");
+    });
+}
+
+function initNavigation() {
+    const routes = {
+        'בית': 'index.html',
+        'עלינו': 'about.html',
+        'צור קשר': 'contact.html',
+        'תפריט': isHome ? '#menu' : 'index.html#menu',
+        'גלריה': isHome ? '#gallery' : 'index.html#gallery',
+        'ביקורות': isHome ? '#reviews' : 'index.html#reviews'
+    };
+
+    // 1. Get Desktop and Footer links
+    let allLinks = Array.from(document.querySelectorAll('nav a, footer a'));
+
+    // 2. Get Mobile Menu links and add them to the array
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    allLinks = allLinks.concat(Array.from(mobileLinks));
+
+    console.log('Total links found:', allLinks.length);
+
+    allLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const linkText = link.textContent.trim();
+            
+            if (routes[linkText]) {
+                // If it's an anchor link (#menu) on the home page, let it scroll
+                // If it's a page link (about.html), let it navigate
+                link.href = routes[linkText];
+                
+                // Close mobile menu if it's open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    // 3. Attach Scroll Spy (Moved inside the init for cleaner execution)
+    if (isHome) {
+        initScrollSpy(allLinks);
+    }
+}
+
+function initScrollSpy(links) {
+    const sections = document.querySelectorAll("section[id]");
+    
+    window.addEventListener("scroll", () => {
+        let currentSection = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            // Reset styles
+            link.classList.remove('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
+            
+            // Apply active styles
+            if (href === `#${currentSection}` || href === `index.html#${currentSection}`) {
+                link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
+            }
+        });
+    });
+}
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
     emailjs.send("service_6x6mxrp", "template_8c1igw9", {
         name: document.querySelector('[name="name"]').value,
@@ -29,59 +113,45 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
         alert("שגיאה בשליחה ❌");
     });
 });
-
-function initNavigation() {
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const isHome = currentPage === "index.html";
-
-    const routes = {
-        'בית': 'index.html',
-        'עלינו': 'about.html',
-        'צור קשר': 'contact.html',
-        'תפריט': isHome ? '#menu' : 'index.html#menu',
-        'גלריה': isHome ? '#gallery' : 'index.html#gallery',
-        'ביקורות': isHome ? '#reviews' : 'index.html#reviews'
-    };
-
-    const links = document.querySelectorAll('nav a, footer a, #mobile-nav a');
-
     // ------------------------
-    // 1. SET LINKS + PAGE ACTIVE
+    // Scroll Spy for homepage sections
     // ------------------------
-    links.forEach(link => {
-        const text = link.textContent.trim();
+    if (isHome) {
+        const sections = document.querySelectorAll("section[id]");
+        window.addEventListener("scroll", () => {
+            let currentSection = "";
 
-        if (routes[text]) {
-            link.setAttribute('href', routes[text]);
-        }
-
-        const href = link.getAttribute('href');
-        if (!href) return;
-
-        const cleanHref = href.split("#")[0];
-
-        // Reset
-        link.classList.remove('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-        link.classList.add('text-on-surface');
-
-        // Highlight regular pages only
-        if (!href.includes("#") && cleanHref === currentPage) {
-            link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-            link.classList.remove('text-on-surface');
-        }
-
-        // Smooth scroll (only when already on homepage)
-        if (href.startsWith('#')) {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute("id");
                 }
             });
-        }
-    });
 
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+
+                // reset
+                link.classList.remove('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
+                link.classList.add('text-on-surface');
+
+                // match section
+                if (
+                    href === `#${currentSection}` ||
+                    href === `index.html#${currentSection}`
+                ) {
+                    link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
+                    link.classList.remove('text-on-surface');
+                }
+
+                // keep "home" active at top
+                if (window.scrollY < 100 && href === "index.html") {
+                    link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
+                    link.classList.remove('text-on-surface');
+                }
+            });
+        });
+    }
     // ------------------------
     // 2. SCROLL SPY (ONLY HOMEPAGE)
     // ------------------------
@@ -122,7 +192,7 @@ function initNavigation() {
             });
         });
     }
-}
+
 
 function initCallButtons() {
     document.querySelectorAll('a[href^="tel:"]').forEach(btn => {
@@ -192,38 +262,6 @@ function initCTAButtons() {
             });
         }
     });
-}
-
-function initMobileMenu() {
-    const hamburger = document.querySelector('button.material-symbols-outlined:contains("menu")') ||
-        [...document.querySelectorAll('button')].find(b => b.textContent.includes('menu'));
-
-    // We dynamically find the nav container since it doesn't have an ID
-    const navBarOptions = document.querySelector('nav .hidden.md\\:flex');
-
-    if (hamburger && navBarOptions) {
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navBarOptions.classList.toggle('hidden');
-            navBarOptions.classList.toggle('flex');
-            navBarOptions.classList.toggle('flex-col');
-            navBarOptions.classList.toggle('absolute');
-            navBarOptions.classList.toggle('top-full');
-            navBarOptions.classList.toggle('left-0');
-            navBarOptions.classList.toggle('w-full');
-            navBarOptions.classList.toggle('bg-surface');
-            navBarOptions.classList.toggle('p-6');
-            navBarOptions.classList.toggle('shadow-lg');
-        });
-
-        // Close on outside click
-        document.addEventListener('click', (e) => {
-            if (!navBarOptions.contains(e.target) && !hamburger.contains(e.target)) {
-                navBarOptions.classList.add('hidden');
-                navBarOptions.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-surface', 'p-6', 'shadow-lg');
-            }
-        });
-    }
 }
 
 function initContactForm() {
