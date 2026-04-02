@@ -85,6 +85,20 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
+      <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-nav {
+      background-color: rgba(251, 250, 238, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .primary-gradient {
+      background: linear-gradient(135deg, #b90027 0%, #e31837 100%);
+    }
+  </style>
 </head>
 <body class="bg-surface text-on-surface">
   <!-- TopNavBar -->
@@ -225,7 +239,7 @@
 <section class="relative bg-primary text-white p-10 rounded-2xl overflow-hidden shadow-2xl">
 <div class="relative z-10">
 <h2 class="text-3xl font-bold mb-6 tracking-tight">זכויות המשתמש</h2>
-<p class="mb-8 opacity-90 text-lg">
+<p class="mb-8 opacity-90 text-lg"></p>
                         השליטה היא בידיים שלכם. אתם זכאים לעיין במידע השמור אצלנו, לבקש לתקנו, או לבקש את מחיקתו מהמאגרים שלנו בכפוף להוראות הדין.
                     </p>
 <a href="contact.html">
@@ -247,9 +261,10 @@
 <!-- Navigation suppressed per rules for "transactional/task-focused" detail pages like Privacy Policy to prioritize content -->
 <!-- However, providing a minimal floating navigation back to Home if needed for UX flow -->
 <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 md:hidden">
-<a class="bg-primary text-white flex items-center gap-2 px-6 py-3 rounded-full shadow-lg font-bold" href="#">
+<a  class="bg-primary text-white flex items-center gap-2 px-6 py-3 rounded-full shadow-lg font-bold" href="index.html">
 <span class="material-symbols-outlined" data-icon="home">home</span>
 <span>חזרה לבית</span>
 </a>
 </div>
+<script src="main.js"></script>
 </body></html>
