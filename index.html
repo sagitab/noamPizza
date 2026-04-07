@@ -79,7 +79,34 @@
       },
     }
   </script>
-  <style>
+       <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            background-color: rgba(251, 250, 238, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg, #b90027 0%, #e31837 100%);
+        }
+
+        #reviews-slider {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        #reviews-slider::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari and Opera */
+        }
+    </style>
+
+  <!-- <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
@@ -92,7 +119,19 @@
     .primary-gradient {
       background: linear-gradient(135deg, #b90027 0%, #e31837 100%);
     }
-  </style>
+
+    #reviews-slider {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    #reviews-slider::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari and Opera */
+    }
+  </style> -->
 </head>
 <div>
   <button>
@@ -101,13 +140,15 @@
     </span>
   </button>
 </div>
+
 <body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
   <!-- TopNavBar -->
   <nav
     class="hidden md:flex fixed top-0 w-full z-50 bg-surface/90 dark:bg-zinc-950/80 backdrop-blur-md border-b border-surface-container-high shadow-sm">
     <div
       class="flex flex-row-reverse justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-right">
-      <div class="text-2xl font-black text-primary">נועם פיצה</div>
+      <a href="index.html">
+      <div class="text-2xl font-black text-primary">נועם פיצה</div></a>
       <div class="hidden md:flex flex-row-reverse items-center gap-8">
         <a class="text-on-surface hover:text-primary transition-colors" href="#">צור קשר</a>
         <a class="text-on-surface hover:text-primary transition-colors" href="#">ביקורות</a>
@@ -116,46 +157,48 @@
         <a class="text-primary font-extrabold border-b-2 border-primary" href="#">בית</a>
       </div>
       <div class="flex items-center gap-4">
-        <a href="index.html#menu" >
-        <button
-          class="material-symbols-outlined text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-all">shopping_cart</button>
-          </a>
-        <a href="tel:972547566033">  
-        <button
-          class="primary-gradient text-white px-6 py-2 rounded-full font-bold transition-all hover:shadow-lg hover:scale-105 active:scale-95">התקשרו
-          עכשיו</button>
-          </a>
+        <a href="index.html#menu">
+          <button
+            class="material-symbols-outlined text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-all">shopping_cart</button>
+        </a>
+        <a href="tel:972547566033">
+          <button
+            class="primary-gradient text-white px-6 py-2 rounded-full font-bold transition-all hover:shadow-lg hover:scale-105 active:scale-95">התקשרו
+            עכשיו</button>
+        </a>
       </div>
     </div>
   </nav>
-     <!-- mobile nav bar -->
-  <header class="md:hidden fixed top-0 w-full z-50 bg-[#fbfaee]/80 dark:bg-[#1b1c15]/80 backdrop-blur-xl shadow-sm dark:shadow-none">
-  <div class="flex justify-between items-center px-6 py-4 w-full">
-  <button id="menu-toggle"
-  class="text-[#1b1c15] active:scale-95 duration-200 transition-opacity hover:opacity-80">
-    <span class="material-symbols-outlined">menu</span>
-  </button>
-  <a href="tel:972547566033">
-  <button class="flex items-center gap-1 bg-primary/10 text-primary px-3 py-1.5 rounded-full active:scale-95 transition-transform">
-  <span class="material-symbols-outlined text-sm" data-icon="call">call</span>
-  <span class="text-xs font-bold">התקשר עכשיו</span>
-  </button></a>
-  <div class="text-xl font-bold text-[#b90027] font-plus-jakarta tracking-tight">
-                  נועם פיצה
-              </div>
-  </div>
+  <!-- mobile nav bar -->
+  <header
+    class="md:hidden fixed top-0 w-full z-50 bg-[#fbfaee]/80 dark:bg-[#1b1c15]/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+    <div class="flex justify-between items-center px-6 py-4 w-full">
+      <button id="menu-toggle" class="text-[#1b1c15] active:scale-95 duration-200 transition-opacity hover:opacity-80">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <a href="tel:972547566033">
+        <button
+          class="flex items-center gap-1 bg-primary/10 text-primary px-3 py-1.5 rounded-full active:scale-95 transition-transform">
+          <span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+          <span class="text-xs font-bold">התקשר עכשיו</span>
+        </button></a>
+      <a href="index.html">
+      <div class="text-xl font-bold text-[#b90027] font-plus-jakarta tracking-tight">
+        נועם פיצה
+      </div></a>
+    </div>
   </header>
-<div id="mobile-menu"
-     class="hidden md:hidden fixed top-[72px] right-0 w-full bg-[#fbfaee] dark:bg-[#1b1c15] shadow-lg z-40">
+  <div id="mobile-menu"
+    class="hidden md:hidden fixed top-[72px] right-0 w-full bg-[#fbfaee] dark:bg-[#1b1c15] shadow-lg z-40">
 
-  <div class="flex flex-col items-start gap-6 p-6 text-right font-bold">
-    <a href="#" class="text-on-surface hover:text-primary">בית</a>
-    <a href="#" class="text-on-surface hover:text-primary">תפריט</a>
-    <a href="#" class="text-on-surface hover:text-primary">עלינו</a>
-    <a href="#" class="text-on-surface hover:text-primary">ביקורות</a>
-    <a href="#" class="text-on-surface hover:text-primary">צור קשר</a>
+    <div class="flex flex-col items-start gap-6 p-6 text-right font-bold">
+      <a href="#" class="text-on-surface hover:text-primary">בית</a>
+      <a href="#" class="text-on-surface hover:text-primary">תפריט</a>
+      <a href="#" class="text-on-surface hover:text-primary">עלינו</a>
+      <a href="#" class="text-on-surface hover:text-primary">ביקורות</a>
+      <a href="#" class="text-on-surface hover:text-primary">צור קשר</a>
+    </div>
   </div>
-</div>
   <main class="pt-20">
     <!-- Hero Section -->
     <section class="relative min-h-[870px] flex items-center overflow-hidden px-6 lg:px-12 py-12">
@@ -355,7 +398,12 @@
       </div>
     </section>
     <!-- Reviews Section -->
-    <section id="reviews" class="py-24 px-6 lg:px-12 bg-surface-container-high overflow-hidden">
+    <!-- <section id="reviews"  class="relative py-24 px-6 lg:px-12 bg-surface-container-high overflow-hidden" style="height: 60vh;" >
+        <div id="reviews-container" class="max-w-7xl mx-auto">
+      </div>
+
+    </section> -->
+        <section id="reviews" class="py-24 px-6 lg:px-12 bg-surface-container-high overflow-hidden">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-black font-headline mb-16 text-center">מה הלקוחות שלנו אומרים</h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -444,50 +492,53 @@
     </section>
   </main>
   <!-- Footer -->
-<footer class="bg-surface-container-low w-full py-10 border-t border-outline-variant/10">
-  <div class="flex flex-row-reverse justify-between items-center px-8 max-w-7xl mx-auto gap-4">
-    
-    <div class="flex flex-row-reverse items-center gap-6">
-      <span class="text-xl font-black text-primary whitespace-nowrap">נועם פיצה</span>
-      <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
-        רחוב הבנים 14, הוד השרון | 12:00 - 23:00
-      </p>
-    </div>
+  <footer class="bg-surface-container-low w-full py-10 border-t border-outline-variant/10">
+    <div class="flex flex-row-reverse justify-between items-center px-8 max-w-7xl mx-auto gap-4">
 
-    <div class="flex flex-row-reverse items-center gap-8">
-      
-      <div class="flex-row-reverse items-center gap-6 text-sm font-bold">
-        <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="contact.html">צור קשר</a>
-        <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="policy.html">מדיניות פרטיות</a>
+      <div class="flex flex-row-reverse items-center gap-6">
+        <span class="text-xl font-black text-primary whitespace-nowrap">נועם פיצה</span>
+        <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
+          רחוב הבנים 14, הוד השרון | 12:00 - 23:00
+        </p>
       </div>
 
-      <div class="flex items-center gap-3 border-r border-outline-variant/30 pr-8">
-        <a href="https://www.instagram.com/napoli_nono_/" target="_blank" 
-           class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white transition-all duration-300 shadow-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-          </svg>
-        </a>
+      <div class="flex flex-row-reverse items-center gap-8">
 
-        <a href="https://wa.me/972547566033" target="_blank" 
-           class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm">
-          <span class="material-symbols-outlined text-2xl">chat</span>
-        </a>
+        <div class="flex-row-reverse items-center gap-6 text-sm font-bold">
+          <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" href="contact.html" style="margin-right: 1vh;">צור
+            קשר</a>
+          <a class="text-on-surface/70 hover:text-primary transition-colors whitespace-nowrap" style="margin-right: 1vh;"
+            href="policy.html">מדיניות פרטיות</a>
+        </div>
+
+        <div class="flex items-center gap-3 border-r border-outline-variant/30 pr-8">
+          <a href="https://www.instagram.com/napoli_nono_/" target="_blank"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white transition-all duration-300 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+            </svg>
+          </a>
+
+          <a href="https://wa.me/972547566033" target="_blank"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm">
+            <span class="material-symbols-outlined text-2xl">chat</span>
+          </a>
+        </div>
+
+        <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
+          © 2026 נועם פיצה • כל הזכויות שמורות
+        </p>
+
+
       </div>
-
-      <p class="hidden lg:block text-on-surface/60 text-sm border-r border-outline-variant/30 pr-6 mr-6 leading-none">
-        © 2026 נועם פיצה • כל הזכויות שמורות
-      </p>
-      
-
     </div>
-  </div>
-</footer>
-  <!-- Mobile FAB for Ordering -->
+  </footer>
+  <!-- Mobile FAB for Ordering
   <a class="md:hidden fixed bottom-6 left-6 z-40 primary-gradient text-on-primary p-4 rounded-full shadow-2xl flex items-center justify-center"
     href="tel:972547566033">
     <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
-  </a>
+  </a> -->
   <script src="main.js"></script>
 </body>
 

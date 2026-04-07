@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initInstagramLinks();
     initScrollToTop();
     initCart();
+    initSlider();
 });
 
 const PHONE = '972547566033';
@@ -16,6 +17,106 @@ const EMAIL = 'noamfrenkel111@gmail.com';
 // Move isHome to the top level so all functions can see it
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const isHome = currentPage === "index.html" || currentPage === "";
+
+
+// Fetch and inject the navbar
+fetch("reviews.html")
+    .then(res => res.text())
+    .then(data => {
+        const container = document.getElementById("reviews-container");
+        if (container) {
+            container.innerHTML = data;
+            // Once injected, initialize the navbar functionalities
+            initSlider();
+        }
+    })
+    .catch(err => console.error("Failed to load navbar:", err));
+
+
+
+function initSlider() {
+    const slides = document.querySelectorAll('.slide');
+    const btnLeft = document.querySelector('.slider__btn--left');
+    const btnRight = document.querySelector('.slider__btn--right');
+    const dotContainer = document.querySelector('.dots');
+
+    let curSlide = 0;
+    const maxSlide = slides.length;
+
+    // Functions
+    const createDots = function () {
+        slides.forEach(function (_, i) {
+            dotContainer.insertAdjacentHTML(
+                'beforeend',
+                `<button class="dots__dot" data-slide="${i}"></button>`
+            );
+        });
+    };
+
+    const activateDot = function (slide) {
+        document
+            .querySelectorAll('.dots__dot')
+            .forEach(dot => dot.classList.remove('dots__dot--active'));
+
+        document
+            .querySelector(`.dots__dot[data-slide="${slide}"]`)
+            .classList.add('dots__dot--active');
+    };
+
+    const goToSlide = function (slide) {
+        slides.forEach(
+            (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+        );
+    };
+
+    // Next slide
+    const nextSlide = function () {
+        if (curSlide === maxSlide - 1) {
+            curSlide = 0;
+        } else {
+            curSlide++;
+        }
+
+        goToSlide(curSlide);
+        activateDot(curSlide);
+    };
+
+    const prevSlide = function () {
+        if (curSlide === 0) {
+            curSlide = maxSlide - 1;
+        } else {
+            curSlide--;
+        }
+        goToSlide(curSlide);
+        activateDot(curSlide);
+    };
+
+    const init = function () {
+        goToSlide(0);
+        createDots();
+
+        activateDot(0);
+    };
+    init();
+
+    // Event handlers
+    btnRight.addEventListener('click', nextSlide);
+    btnLeft.addEventListener('click', prevSlide);
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') prevSlide();
+        e.key === 'ArrowRight' && nextSlide();
+    });
+
+    dotContainer.addEventListener('click', function (e) {
+        if (e.target.classList.contains('dots__dot')) {
+            const { slide } = e.target.dataset;
+            goToSlide(slide);
+            activateDot(slide);
+        }
+    });
+}
+
 
 function initMobileMenu() {
     const toggle = document.getElementById("menu-toggle");
@@ -56,12 +157,12 @@ function initNavigation() {
     allLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const linkText = link.textContent.trim();
-            
+
             if (routes[linkText]) {
                 // If it's an anchor link (#menu) on the home page, let it scroll
                 // If it's a page link (about.html), let it navigate
                 link.href = routes[linkText];
-                
+
                 // Close mobile menu if it's open
                 const mobileMenu = document.getElementById('mobile-menu');
                 if (mobileMenu) mobileMenu.classList.add('hidden');
@@ -77,7 +178,7 @@ function initNavigation() {
 
 function initScrollSpy(links) {
     const sections = document.querySelectorAll("section[id]");
-    
+
     window.addEventListener("scroll", () => {
         let currentSection = "";
         sections.forEach(section => {
@@ -91,7 +192,7 @@ function initScrollSpy(links) {
             const href = link.getAttribute('href');
             // Reset styles
             link.classList.remove('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-            
+
             // Apply active styles
             if (href === `#${currentSection}` || href === `index.html#${currentSection}`) {
                 link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
@@ -99,99 +200,9 @@ function initScrollSpy(links) {
         });
     });
 }
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    emailjs.send("service_6x6mxrp", "template_8c1igw9", {
-        name: document.querySelector('[name="name"]').value,
-        phone: document.querySelector('[name="phone"]').value,
-        email: document.querySelector('[name="email"]').value,
-        message: document.querySelector('[name="message"]').value
-    })
-    .then(function(response) {
-        alert("ההודעה נשלחה בהצלחה! 🎉");
-    }, function(error) {
-        alert("שגיאה בשליחה ❌");
-    });
-});
-    // ------------------------
-    // Scroll Spy for homepage sections
-    // ------------------------
-    if (isHome) {
-        const sections = document.querySelectorAll("section[id]");
-        window.addEventListener("scroll", () => {
-            let currentSection = "";
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                if (window.scrollY >= sectionTop) {
-                    currentSection = section.getAttribute("id");
-                }
-            });
 
-            links.forEach(link => {
-                const href = link.getAttribute('href');
 
-                // reset
-                link.classList.remove('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-                link.classList.add('text-on-surface');
-
-                // match section
-                if (
-                    href === `#${currentSection}` ||
-                    href === `index.html#${currentSection}`
-                ) {
-                    link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-                    link.classList.remove('text-on-surface');
-                }
-
-                // keep "home" active at top
-                if (window.scrollY < 100 && href === "index.html") {
-                    link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-                    link.classList.remove('text-on-surface');
-                }
-            });
-        });
-    }
-    // ------------------------
-    // 2. SCROLL SPY (ONLY HOMEPAGE)
-    // ------------------------
-    if (isHome) {
-        const sections = document.querySelectorAll("section[id]");
-
-        window.addEventListener("scroll", () => {
-            let currentSection = "";
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                if (window.scrollY >= sectionTop) {
-                    currentSection = section.getAttribute("id");
-                }
-            });
-
-            links.forEach(link => {
-                const href = link.getAttribute("href");
-
-                // reset
-                link.classList.remove('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-                link.classList.add('text-on-surface');
-
-                // match section
-                if (
-                    href === `#${currentSection}` ||
-                    href === `index.html#${currentSection}`
-                ) {
-                    link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-                    link.classList.remove('text-on-surface');
-                }
-
-                // keep "home" active at top
-                if (window.scrollY < 100 && href === "index.html") {
-                    link.classList.add('text-primary', 'font-extrabold', 'border-b-2', 'border-primary');
-                    link.classList.remove('text-on-surface');
-                }
-            });
-        });
-    }
 
 
 function initCallButtons() {
@@ -204,31 +215,45 @@ function initCallButtons() {
 }
 
 function initWhatsApp() {
-    const waBaseMsg = encodeURIComponent('שלום אני רוצה להזמין פיצה');
-    const waLink = `https://wa.me/${PHONE}?text=${waBaseMsg}`;
+        const waBaseMsg = encodeURIComponent('שלום אני רוצה להזמין פיצה');
+        const waLink = `https://wa.me/${PHONE}?text=${waBaseMsg}`;
 
-    // Replace all existing WhatsApp links
-    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(link => {
-        link.setAttribute('href', waLink);
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-    });
+        // Replace all existing WhatsApp links
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(link => {
+            link.setAttribute('href', waLink);
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
 
-    // Add Floating WhatsApp Button (Bottom-Left)
-    // Note: If one already exists in HTML, we skip. But we inject it if not present.
-    if (!document.querySelector('a[aria-label="WhatsApp"]')) {
-        const floatingBtn = document.createElement('a');
-        floatingBtn.href = waLink;
-        floatingBtn.target = '_blank';
-        floatingBtn.rel = 'noopener noreferrer';
-        floatingBtn.className = 'fixed bottom-6 left-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#1EBE5D] transition-all hover:scale-110 z-50 flex items-center justify-center';
-        floatingBtn.setAttribute('aria-label', 'WhatsApp');
-        floatingBtn.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-            </svg>
-        `;
-        document.body.appendChild(floatingBtn);
+        // Add Floating WhatsApp Button (Bottom-Left)
+        // Note: If one already exists in HTML, we skip. But we inject it if not present.
+        if (!document.querySelector('a[aria-label="WhatsApp"]')) {
+            const floatingBtn = document.createElement('a');
+            floatingBtn.href = waLink;
+            floatingBtn.target = '_blank';
+            floatingBtn.rel = 'noopener noreferrer';
+            floatingBtn.className = 'fixed bottom-6 left-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#1EBE5D] transition-all hover:scale-110 z-50 flex items-center justify-center';
+            floatingBtn.setAttribute('aria-label', 'WhatsApp');
+            floatingBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                </svg>
+            `;
+            document.body.appendChild(floatingBtn);
+            floatingBtn.style.setProperty("bottom", "15vh", "important");
+            // const footer = document.className(".bg-surface-container-low");
+
+            // if (footer) {
+            //     window.addEventListener("scroll", () => {
+            //         const footerRect = footer.getBoundingClientRect();
+
+            //         if (footerRect.top < window.innerHeight) {
+            //             floatingBtn.classList.add("btnup");
+            //         } else {
+            //             floatingBtn.classList.remove("btnup");
+            //         }
+            //     });
+            // }
     }
 }
 
@@ -343,7 +368,7 @@ function initInstagramLinks() {
 function initScrollToTop() {
     const btn = document.createElement('button');
     btn.innerHTML = '↑';
-    btn.className = 'fixed bottom-24 left-6 bg-[#b90027] text-white w-12 h-12 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-40 hover:bg-[#e31837] flex items-center justify-center font-bold text-2xl';
+    btn.className = 'fixed bottom-[28vh] left-6 bg-[#b90027] text-white w-12 h-12 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-40 hover:bg-[#e31837] flex items-center justify-center font-bold text-2xl';
     btn.setAttribute('aria-label', 'חזור למעלה');
     document.body.appendChild(btn);
 

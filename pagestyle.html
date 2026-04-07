@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eeeeed",
+                    "on-primary-container": "#7f98c5",
+                    "on-tertiary-container": "#4b3e00",
+                    "on-secondary-fixed": "#241a00",
+                    "outline-variant": "#c6c5d4",
+                    "on-background": "#1a1c1c",
+                    "tertiary-fixed": "#ffe16d",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#adc7f7",
+                    "surface-dim": "#dadad9",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#455f88",
+                    "primary-container": "#133057",
+                    "primary": "#001b3b",
+                    "inverse-surface": "#2f3130",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-secondary-fixed-variant": "#574500",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#705d00",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d6e3ff",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary-fixed": "#001b3c",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e3e2e1",
+                    "on-surface-variant": "#454652",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "background": "#faf9f8",
+                    "surface-container-high": "#e9e8e7",
+                    "on-secondary-container": "#745c00",
+                    "surface-container-low": "#f4f3f2",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-tertiary-fixed": "#221b00",
+                    "outline": "#767683",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "surface-container-highest": "#e3e2e1",
+                    "surface-bright": "#faf9f8",
+                    "surface": "#faf9f8",
+                    "secondary-container": "#fed65b",
+                    "inverse-on-surface": "#f1f0f0",
+                    "tertiary-container": "#c8a900"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "2rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .testimonial-shadow {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+        .ghost-border {
+            border: 1px solid rgba(118, 118, 131, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f8]/70 dark:bg-[#001b3b]/70 backdrop-blur-xl border-b border-[#001b3b]/10 dark:border-[#faf9f8]/10 shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[#001b3b] dark:text-[#fed65b]" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-bold font-['Noto_Serif'] text-[#001b3b] dark:text-[#faf9f8]">The Editorial Echo</h1>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-[#001b3b] dark:text-[#fed65b] font-bold border-b-2 border-[#735c00] font-['Noto_Serif'] text-lg tracking-tight" href="#">Home</a>
+<a class="text-[#001b3b]/60 dark:text-[#faf9f8]/60 font-medium hover:text-[#735c00] transition-colors duration-300 font-['Noto_Serif'] text-lg tracking-tight" href="#">Journal Archive</a>
+<a class="text-[#001b3b]/60 dark:text-[#faf9f8]/60 font-medium hover:text-[#735c00] transition-colors duration-300 font-['Noto_Serif'] text-lg tracking-tight" href="#">Editorial Board</a>
+</div>
+<button class="scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[#001b3b] dark:text-[#fed65b]" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-12">
+<!-- Testimonial Slider Section -->
+<section class="bg-surface-container-low min-h-[707px] flex flex-col items-center justify-center px-6 py-20 relative overflow-hidden">
+<!-- Contextual Header -->
+<div class="text-center mb-16 max-w-md">
+<span class="font-label text-secondary font-bold tracking-widest uppercase text-xs mb-3 block">ביקורות המערכת</span>
+<h2 class="font-headline text-4xl font-bold text-primary leading-tight">מה שקוראינו אומרים</h2>
+</div>
+<div class="w-full max-w-md relative">
+<!-- Navigation Buttons (Desktop logic but styled for mobile accessibility) -->
+<div class="absolute inset-y-0 -left-4 md:-left-12 flex items-center z-10">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest testimonial-shadow flex items-center justify-center text-primary ghost-border hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+</div>
+<div class="absolute inset-y-0 -right-4 md:-right-12 flex items-center z-10">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest testimonial-shadow flex items-center justify-center text-primary ghost-border hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Testimonial Card -->
+<div class="bg-surface-container-lowest testimonial-shadow rounded-2xl p-10 relative">
+<!-- Overlapping Quote Icon -->
+<div class="absolute -top-6 right-10 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" data-icon="format_quote" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<!-- Stars -->
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Quote Text -->
+<blockquote class="font-headline text-2xl italic text-primary leading-relaxed mb-10">
+                        "התוכן של The Editorial Echo הוא פשוט יוצא דופן. השילוב בין העיצוב המוקפד לבין העומק העיתונאי יוצר חוויית קריאה שאין כמותה בדיגיטל המודרני."
+                    </blockquote>
+<!-- Author Meta -->
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="דיוקן מקצועי של גבר מחייך" class="w-full h-full object-cover" data-alt="professional close-up portrait of a thoughtful man in his 40s wearing spectacles and a dark blazer in a library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRn4Ul9ysNrHCUlVQeOimpThra-mH7h3ZAZVvW2XktBEW4mISuWzIaqR8EVCVL-SoyXFeqVQeU05vEIPhlRVcu_7asPhUKfgtjMpYOxAFo1i5puphhgYuwTOGfiVlHSkFQlbypp4bZBmjTeZHRf3lipxbKhq8JqMlJDIsZwTmm_sfIzKuN9KpcwDRjoRtuvR7N4TfeSzlFJBm2Uo7uYYXVI20wegh4cvGWS8d7CANSLSbUXwVdDDfG1djsD7iH_VAUrgQ2yQ7cP7Ui"/>
+</div>
+<div>
+<p class="font-body font-bold text-primary text-lg">ד״ר יונתן אריאלי</p>
+<p class="font-body text-on-surface-variant text-sm">מרצה בכיר לתקשורת</p>
+</div>
+</div>
+</div>
+<!-- Pagination Dots -->
+<div class="flex justify-center items-center gap-2 mt-12">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="w-6 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section (High-end UI pattern) -->
+<section class="max-w-4xl mx-auto px-6 py-24">
+<div class="bg-primary rounded-2xl p-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-DT75zAEH_cFIno_hOwkd5EI9v-v2ZgzoMbyp5MD2JxfDWyDtcrMwQhDH5GzVm3RhVtg4_9FVG--URg9sk5Yo1tNh86e3_MeiE67nbVmeg_kZOKNCPsAdL06hXO0PxEG7HrXnuelpm_qQ_5_MdrUtE0XhjdEpdMrXRoPZJzhVR8EtVTjIgOf4t1t4aKq-ZzUyD-eBe7U9HNA60ninEtG0sa88ByDzbirOI5taHgsw8m8emDI3YyejqaIO362NAic0Jaz_iWL6rAlo');"></div>
+<div class="relative z-10">
+<h3 class="font-headline text-3xl text-on-primary mb-4">הצטרפו לקהילת הקוראים שלנו</h3>
+<p class="font-body text-primary-fixed-dim mb-8 max-w-lg mx-auto">קבלו את המהדורות המיוחדות והמאמרים המעמיקים ביותר ישירות לתיבת הדואר שלכם.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-1 px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="כתובת האימייל שלך" type="email"/>
+<button class="bg-secondary text-white font-bold px-8 py-4 rounded-xl hover:bg-secondary-container hover:text-on-secondary-container transition-all">הרשמה</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-12 px-8 bg-[#faf9f8] dark:bg-[#001b3b] border-t border-[#001b3b]/5 dark:border-[#faf9f8]/5">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="font-['Noto_Serif'] italic text-xl text-[#001b3b] dark:text-[#faf9f8]">The Editorial Echo</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Manrope'] text-sm tracking-wide uppercase text-[#001b3b]/70 dark:text-[#faf9f8]/70 hover:text-[#735c00] underline decoration-dotted transition-all opacity-80 hover:opacity-100" href="#">Journal Archive</a>
+<a class="font-['Manrope'] text-sm tracking-wide uppercase text-[#001b3b]/70 dark:text-[#faf9f8]/70 hover:text-[#735c00] underline decoration-dotted transition-all opacity-80 hover:opacity-100" href="#">Editorial Board</a>
+<a class="font-['Manrope'] text-sm tracking-wide uppercase text-[#001b3b]/70 dark:text-[#faf9f8]/70 hover:text-[#735c00] underline decoration-dotted transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm tracking-wide uppercase text-[#001b3b]/70 dark:text-[#faf9f8]/70 hover:text-[#735c00] underline decoration-dotted transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="font-['Manrope'] text-sm tracking-wide uppercase text-[#001b3b]/70 dark:text-[#faf9f8]/70">© 2024 The Editorial Echo. Curated Excellence.</div>
+</div>
+</footer>
+</body></html>
